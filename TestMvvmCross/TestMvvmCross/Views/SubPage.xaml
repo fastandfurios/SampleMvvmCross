@@ -5,12 +5,17 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:views="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
              xmlns:viewModels="clr-namespace:TestMvvmCross.ViewModels;assembly=TestMvvmCross.Core"
+             xmlns:rectangle="clr-namespace:TestMvvmCross.Graphic;assembly=TestMvvmCross.Core"
              Title="Вторая страница"
              mc:Ignorable="d"
              x:Class="TestMvvmCross.Core.Views.SubPage">
     <ContentPage.Content>
-        <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
-            <Label Text="Welcome to MvvmCross!"/>
-        </StackLayout>
+       <Grid RowSpacing="0">
+           <Grid.RowDefinitions>
+                <RowDefinition Height="125"/>
+            </Grid.RowDefinitions>
+           <rectangle:Rectangle Grid.Row="0"/>
+            <Label Grid.Row="0" Text="Получилось!!!!!" TextColor="Red" HorizontalOptions="Center"/>
+        </Grid>
     </ContentPage.Content>
 </views:MvxContentPage>

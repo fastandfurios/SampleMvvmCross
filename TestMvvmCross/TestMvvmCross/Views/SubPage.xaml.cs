@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using MvvmCross.Forms.Views;
+﻿using MvvmCross.Forms.Views;
+using SkiaSharp;
+using SkiaSharp.Views.Forms;
+using TestMvvmCross.Graphic;
 using TestMvvmCross.ViewModels;
-using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 namespace TestMvvmCross.Core.Views
