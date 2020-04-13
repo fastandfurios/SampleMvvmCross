@@ -4,17 +4,27 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:views="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
+             xmlns:graphic="clr-namespace:TestMvvmCross.Graphic;assembly=TestMvvmCross.Core"
              xmlns:viewModels="clr-namespace:TestMvvmCross.ViewModels;assembly=TestMvvmCross.Core"
              Title="Главная страница"
              mc:Ignorable="d"
              x:Class="TestMvvmCross.Core.Views.MainUserPage">
     <ContentPage.Content>
         <StackLayout VerticalOptions="Center">
-            <Button Text="Вторая страница"
+            <Frame WidthRequest="300" HorizontalOptions="Center" CornerRadius="25" HeightRequest="50" Padding="0" IsClippedToBounds="True">
+                <Grid HorizontalOptions="FillAndExpand">
+                    <graphic:Rectangle/>
+                    <Label Text="ВТОРАЯ СТРАНИЦА" TextColor="White" VerticalOptions="Center" HorizontalOptions="Center"/>
+                </Grid>
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding OpenSubPageCommand}"/>
+                </Frame.GestureRecognizers>
+            </Frame>
+            <Button Text="Третья страница"
                     HorizontalOptions="Center"
                     WidthRequest="300"
-                    BackgroundColor="Chartreuse"
-                    Command="{Binding OpenSubPageCommand}"/>
+                    BackgroundColor="Gold"
+                    Command="{Binding OpenThreePageCommand}"/>
         </StackLayout>
     </ContentPage.Content>
 </views:MvxContentPage>

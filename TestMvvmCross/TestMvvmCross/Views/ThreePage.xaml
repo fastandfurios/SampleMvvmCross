@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<views:MvxContentPage x:TypeArguments="viewModels:ThreeViewModel" xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:views="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
+             xmlns:viewModels="clr-namespace:TestMvvmCross.ViewModels;assembly=TestMvvmCross.Core"
+             xmlns:graphic="clr-namespace:TestMvvmCross.Graphic;assembly=TestMvvmCross.Core"
+             mc:Ignorable="d"
+             x:Class="TestMvvmCross.Core.Views.ThreePage">
+    <ContentPage.Content>
+        <Grid>
+            <BoxView BackgroundColor="Red" WidthRequest="100" HeightRequest="100" VerticalOptions="Center" HorizontalOptions="Center"/>
+            <graphic:NewRectangle/>
+        </Grid>
+    </ContentPage.Content>
+</views:MvxContentPage>
