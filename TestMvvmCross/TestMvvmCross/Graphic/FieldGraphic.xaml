@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:graphic="clr-namespace:TestMvvmCross.Core.Graphic"
+             x:Class="TestMvvmCross.Core.Graphic.FieldGraphic">
+    <ContentView.Content>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0">
+                <Label Text="100%" TranslationY="-10" HorizontalOptions="EndAndExpand"/>
+                <Label Text="80%" TranslationY="40" HorizontalOptions="EndAndExpand"/>
+                <Label Text="60%" TranslationY="90" HorizontalOptions="EndAndExpand"/>
+                <Label Text="40%" TranslationY="140" HorizontalOptions="EndAndExpand"/>
+                <Label Text="20%" TranslationY="190" HorizontalOptions="EndAndExpand"/>
+                <Label Text="0%"  TranslationY="240" HorizontalOptions="EndAndExpand"/>
+            </Grid>
+             <Frame Grid.Column="1" CornerRadius="0" HeightRequest="250" HasShadow="False" BorderColor="#838390" Padding="0">
+                <Grid>
+                    <BoxView TranslationY="50" HeightRequest="1" VerticalOptions="Start" BackgroundColor="Gray"/>
+                    <BoxView TranslationY="100" HeightRequest="1" VerticalOptions="Start" BackgroundColor="Gray"/>
+                    <BoxView TranslationY="150" HeightRequest="1" VerticalOptions="Start" BackgroundColor="Gray"/>
+                    <BoxView TranslationY="200" HeightRequest="1" VerticalOptions="Start" BackgroundColor="Gray"/>
+
+                </Grid>
+            </Frame>
+        </Grid>
+    </ContentView.Content>
+</ContentView>

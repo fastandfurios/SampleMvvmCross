@@ -1,21 +1,97 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<views:MvxContentPage x:TypeArguments="viewModels:SubViewModel" xmlns="http://xamarin.com/schemas/2014/forms"
+<views:MvxContentPage x:TypeArguments="viewModels:SubViewModel"
+                      xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:views="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
              xmlns:viewModels="clr-namespace:TestMvvmCross.ViewModels;assembly=TestMvvmCross.Core"
-             xmlns:rectangle="clr-namespace:TestMvvmCross.Graphic;assembly=TestMvvmCross.Core"
+             xmlns:forms="clr-namespace:Microcharts.Forms;assembly=Microcharts.Forms"
+             xmlns:graphic="clr-namespace:TestMvvmCross.Core.Graphic"
              Title="Вторая страница"
              mc:Ignorable="d"
              x:Class="TestMvvmCross.Core.Views.SubPage">
     <ContentPage.Content>
-       <Grid RowSpacing="0">
-           <Grid.RowDefinitions>
-                <RowDefinition Height="125"/>
-            </Grid.RowDefinitions>
-           <rectangle:Rectangle Grid.Row="0"/>
-            <Label Grid.Row="0" Text="Получилось!!!!!" TextColor="Red" HorizontalOptions="Center"/>
-        </Grid>
+        <ScrollView>
+            <StackLayout>
+          <Grid Padding="0,30,0,0" Margin="5,0,35,50">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0">
+                <Label Text="100%" TranslationY="-5" HorizontalOptions="EndAndExpand" FontSize="Micro"/>
+                <Label Text="80%" TranslationY="45" HorizontalOptions="EndAndExpand" FontSize="Micro"/>
+                <Label Text="60%" TranslationY="95" HorizontalOptions="EndAndExpand" FontSize="Micro"/>
+                <Label Text="40%" TranslationY="145" HorizontalOptions="EndAndExpand" FontSize="Micro"/>
+                <Label Text="20%" TranslationY="195" HorizontalOptions="EndAndExpand" FontSize="Micro"/>
+                <Label Text="0%"  TranslationY="245" HorizontalOptions="EndAndExpand" FontSize="Micro"/>
+            </Grid>
+                 <Frame Grid.Column="1" CornerRadius="0" HeightRequest="250" HasShadow="False" BorderColor="#838390" Padding="0" VerticalOptions="Start">
+                    <Grid>
+                        <BoxView TranslationY="50" HeightRequest="1" VerticalOptions="Start" BackgroundColor="Gray"/>
+                        <BoxView TranslationY="100" HeightRequest="1" VerticalOptions="Start" BackgroundColor="Gray"/>
+                        <BoxView TranslationY="150" HeightRequest="1" VerticalOptions="Start" BackgroundColor="Gray"/>
+                        <BoxView TranslationY="200" HeightRequest="1" VerticalOptions="Start" BackgroundColor="Gray"/>
+                        <Grid Margin="10,0" ColumnSpacing="15">
+                            <Grid.Resources>
+                                <ResourceDictionary>
+                                    <Style TargetType="Label">
+                                        <Setter Property="Grid.Row" Value="1"/>
+                                        <Setter Property="HorizontalOptions" Value="Center"/>
+                                        <Setter Property="FontSize" Value="Micro"/>
+                                    </Style>
+                                </ResourceDictionary>
+                            </Grid.Resources>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="250"/>
+                                <RowDefinition Height="30"/>
+                            </Grid.RowDefinitions>
+                            <forms:ChartView Grid.Column="0"
+                                             Grid.Row="0"
+                                             x:Name="chartView1"
+                                             VerticalOptions="FillAndExpand"/>
+                            <Label Grid.Column="0"
+                                   Text="to 18"/>
+                            <forms:ChartView Grid.Column="1" x:Name="chartView2"
+                                             VerticalOptions="FillAndExpand"/>
+                            <Label Grid.Column="1"
+                                   Text="18-21"/>
+                            <forms:ChartView Grid.Column="2" x:Name="chartView3"
+                                         VerticalOptions="FillAndExpand"/>
+                            <Label Grid.Column="2"
+                                   Text="21-30"/>
+                            <forms:ChartView Grid.Column="3" x:Name="chartView4"
+                                         VerticalOptions="FillAndExpand"/>
+                            <Label Grid.Column="3"
+                                   Text="30-40"/>
+                            <forms:ChartView Grid.Column="4" x:Name="chartView5"
+                                         VerticalOptions="FillAndExpand"/>
+                            <Label Grid.Column="4"
+                                   Text="40-50"/>
+                            <forms:ChartView Grid.Column="5" x:Name="chartView6"
+                                         VerticalOptions="FillAndExpand"/>
+                            <Label Grid.Column="5"
+                                   Text="to 50"/>
+                        </Grid>
+                    </Grid>
+                </Frame>
+            </Grid>
+                <forms:ChartView x:Name="chartCircle"
+                                 HorizontalOptions="Center"
+                                 WidthRequest="240"
+                                 HeightRequest="240"
+                                 Rotation="90"/>
+
+            </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </views:MvxContentPage>

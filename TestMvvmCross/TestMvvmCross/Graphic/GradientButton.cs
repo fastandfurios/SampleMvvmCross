@@ -5,8 +5,7 @@ namespace TestMvvmCross.Graphic
 {
 	public class GradientButton : Frame
 	{
-
-		public GradientButton()
+        public GradientButton()
 		{
 			CornerRadius = 25;
 			HeightRequest = 50;
